@@ -1,0 +1,34 @@
+<html>
+    <head><title>TO DO lIST</title>
+        
+    </head>
+    <body>
+            <center> <h1>MY TO DO LIST</h1>
+        <input type="text" id="candidate">
+        <button onclick="AddItem()">Add</button>
+        <button onclick="Remove()">Remove</button>
+        <ul id="My list"></ul>
+        </center>
+        <script>
+            function AddItem(){
+               
+                
+                    var ul = document.getElementById("My list");
+                var candidate = document.getElementById("candidate");
+                var li = document.createElement("li"); 
+                li.setAttribute('id',candidate.value);
+                if(candidate.value===''){alert("Please Enter something!");}
+                else{
+                li.appendChild(document.createTextNode(candidate.value));
+                ul.appendChild(li);
+                } 
+        }
+            function Remove(){
+                var ul = document.getElementById("My list");
+                var candidate = document.getElementById("candidate");
+                var item = document.getElementById(candidate.value);
+                ul.removeChild(item);
+            }
+        </script>
+    </body>
+</html>
